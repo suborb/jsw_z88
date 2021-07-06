@@ -32,18 +32,18 @@ The game itself has been extensively disassembled, for information see, for exam
 
 The preset keys are:
 
-Left    - O
-Right   - P
-Jump    - Space
-Pause   - H
+* Left    - O
+* Right   - P
+* Jump    - Space
+* Pause   - H
 
 These movement keys can be redefined to suit your playing style/hand size!
 
 There is also a set of control keys which cannot be redefined:
 
-ESC     - Quit back to intro from game
-TAB     - Toggle screen size - mini/standard
-DEL     - Toggle inverse background
+* ESC     - Quit back to intro from game
+* TAB     - Toggle screen size - mini/standard
+* DEL     - Toggle inverse background
 
 ## Acknowledgements
 
