@@ -1,0 +1,78 @@
+;       A whole lot of defines for JSW Application
+;
+;       25/11/98
+
+
+;Sprites..
+        defc    origspritehig   = $9C
+        defc    newspritehig    = $C0
+        defc    thefoot         = $C000
+        defc    willyright      = $C100
+        defc    barrel          = $C020
+        defc    object_store    = 49152+1983
+;Rooms..
+        defc    rooms           = 32768
+        defc    roomshigh       = 128
+;Plotting
+        defc    bakscr1         = 8192
+        defc    bakscr1hig      = 32
+        defc    bakscr2         = 13824
+        defc    bakscr2hig      = 54
+        defc    bakscr1att      = 12288
+        defc    bakscr2att      = 17920
+        defc    bakscr2atthig   = 70
+;Various sprite positions
+        defc    mariapos        = bakscr2+2159-1  ;$686E
+        defc    willydiepos     = bakscr2+2191 ;$488F
+        defc    barrelpos       = bakscr2+2255  ;$48CF
+;Housekeeping variables
+;Object collection things
+        defc    objstklow       = 13311
+        defc    obktable        = 13312
+        defc    objtablehig     = 52
+;Rooms and user variables
+        defc    cur_room_dat    = 12800
+        defc    cur_roomdathig  = 50
+        defc    var_base        = 12800+256
+
+;Screen line table (kept in ROM)
+        defc    scrtable        = 18432
+        defc    scrtablehig     = 72
+
+
+
+
+DEFVARS cur_room_dat
+{
+;                    ds.b 128       ;room data
+     cur_room_tit   ds.b 32
+     airdata        ds.b 9
+     waterdata      ds.b 9
+     earthdata      ds.b 9
+     firedata       ds.b 9
+     rampdata       ds.b 9
+     convdata       ds.b 9
+     convdir        ds.b 1
+     convsta        ds.w 1
+     convlen        ds.b 1
+     rampdir        ds.b 1
+     rampst         ds.w 1
+     ramplen        ds.b 1
+     bdr            ds.b 3
+     scrbitmap      ds.b 8    ;item bitmap
+     exitL          ds.b 1
+     exitR          ds.b 1
+     exitU          ds.b 1
+     exitD          ds.b 1
+     unused         ds.b 3    ;unused
+     guardian       ds.b 16
+}
+
+
+;       Where the screen will be paged in etc
+
+                defc    segment    = $D2
+                defc    segstor    = $4D2
+                defc    reqpag     = 41  ;10.5k of bad data required
+                defc    in_bank     = 63  ;top bank!
+
